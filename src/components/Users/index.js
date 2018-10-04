@@ -27,7 +27,7 @@ export default class Users extends React.Component{
     )
   }
   render(){
-    const { usersList, usersFetchState, usersLastPage } = this.props;
+    const { usersList, usersFetchState} = this.props;
     return(
       <table className="table">
         <tbody>
@@ -37,7 +37,6 @@ export default class Users extends React.Component{
             <th>Surname</th>
             <th>Description</th>
           </tr>
-          console.log(users);
           { usersFetchState === 'request' ? <Preloader cols="4"/> : this.renderUsersList(usersList) }
         </tbody>
 
