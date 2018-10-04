@@ -23,14 +23,19 @@ const dataFetchingState = handleActions({
   },
 }, 'none');
 
+/*
+ * тут просто неправильно стояли скобочки
+ */
 const users = handleActions({
-  [actions.fetchDataSuccess](state, { payload: { users } } {
+  [actions.fetchDataSuccess](state, { payload: { users } }) {
     return {
       ...state,
       // usersCurrentPage: payload.current_page,
       // usersLastPage: payload.last_page,
       usersList: { ...users }
-  }, initialState);
+    };
+  }
+}, initialState);
 
 export default combineReducers({
   dataFetchingState,
