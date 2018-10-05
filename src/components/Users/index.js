@@ -9,7 +9,7 @@ export default class Users extends React.Component{
     console.log(this.props.users);
   }
   renderUsersList = (users) => {
-    console.log(this.props);
+    console.log(users);
     if(users.length === 0){
       return <tr><th style={{ textAlign: 'center' }} colSpan={'4'}>Nothing</th></tr>;
     }

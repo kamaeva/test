@@ -15,5 +15,3 @@ export const getDataList = () => async (dispatch) => {
 	  dispatch(fetchDataFailure());
   }
 };
-
-
