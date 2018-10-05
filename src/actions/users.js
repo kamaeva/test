@@ -10,7 +10,7 @@ export const getDataList = () => async (dispatch) => {
   dispatch(fetchDataRequest());
   try {
     const res = await axios.get('./users.json');
-    dispatch(fetchDataSuccess(res.data.users));
+    dispatch(fetchDataSuccess(res.data));
   } catch (e) {
 	  dispatch(fetchDataFailure());
   }

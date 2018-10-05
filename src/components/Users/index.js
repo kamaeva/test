@@ -8,10 +8,8 @@ export default class Users extends React.Component{
     this.props.getDataList();
     console.log(this.props.users);
   }
-  renderUsersList = (usersList) => {
-    console.log(usersList);//underfined
-    this.props.getDataList();//пишет,что нет такой функции
-    const users = Object.values(usersList);
+  renderUsersList = (users) => {
+    console.log(this.props);
     if(users.length === 0){
       return <tr><th style={{ textAlign: 'center' }} colSpan={'4'}>Nothing</th></tr>;
     }
@@ -37,7 +35,7 @@ export default class Users extends React.Component{
             <th>Surname</th>
             <th>Description</th>
           </tr>
-          { usersFetchState === 'request' ? <Preloader cols="4"/> : this.renderUsersList(usersList) }
+          { usersFetchState === 'request' ? <tr><th cols="4"><Preloader/></th></tr> : this.renderUsersList(usersList) }
         </tbody>
 
       </table>

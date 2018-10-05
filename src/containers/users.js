@@ -5,7 +5,7 @@ import { getDataList } from '../actions/users';
 
 const mapStateToProps = state => ({
   usersFetchState: state.users.usersListFetchingState,
-  usersList: state.users.users.usersList,
+  usersList: Object.values(state.users.usersList),
 });
 
 export default connect(mapStateToProps, { getDataList })(Users);
