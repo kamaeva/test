@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
    * или как-то так. его подключают в главно файле как мидлваре.
    * в документации написанно как подключить, но если что, прашивай
    */
-  usersList: state.users.usersList,
+  usersList: Object.values(state.users.usersList),
 });
 
 export default connect(mapStateToProps, { getDataList })(Users);

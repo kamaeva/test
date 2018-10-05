@@ -4,12 +4,11 @@ import Preloader from '../common/Preloader';
 export default class Users extends React.Component{
   componentDidMount() {
     this.props.getDataList();
-    console.log('props', this.props);
+    // console.log('props', this.props);
   }
-  renderUsersList = (usersList) => {
-    console.log(usersList);//underfined
-    this.props.getDataList();//пишет,что нет такой функции
-    const users = Object.values(usersList);
+  renderUsersList = (users) => {
+    // console.log(usersList);//underfined
+    // const users = Object.values(usersList);
     if(users.length === 0){
       return <tr><th style={{ textAlign: 'center' }} colSpan={'4'}>Nothing</th></tr>;
     }
@@ -35,7 +34,6 @@ export default class Users extends React.Component{
             <th>Surname</th>
             <th>Description</th>
           </tr>
-          console.log(users);
           { usersFetchState === 'request' ? <Preloader cols="4"/> : this.renderUsersList(usersList) }
         </tbody>
 
