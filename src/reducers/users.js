@@ -1,5 +1,3 @@
-
-
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 
@@ -7,11 +5,10 @@ import * as actions from '../actions/users';
 
 const initialState = {
   usersList: {},
-  // usersCurrentPage: '',
-  // usersLastPage: '',
+  usersLastPage: '',
 };
 
-const dataFetchingState = handleActions({
+const usersListFetchingState = handleActions({
   [actions.fetchDataRequest]() {
     return 'request';
   },
@@ -23,21 +20,17 @@ const dataFetchingState = handleActions({
   },
 }, 'none');
 
-/*
- * тут просто неправильно стояли скобочки
- */
 const users = handleActions({
-  [actions.fetchDataSuccess](state, { payload: { users } }) {
+  [actions.fetchDataSuccess](state, { payload }) {
     return {
       ...state,
-      // usersCurrentPage: payload.current_page,
-      // usersLastPage: payload.last_page,
-      usersList: { ...users }
+      usersLastPage: payload.users.length,
+      usersList: { ...payload.users }
     };
   }
 }, initialState);
 
 export default combineReducers({
-  dataFetchingState,
+  usersListFetchingState,
   users,
 });
