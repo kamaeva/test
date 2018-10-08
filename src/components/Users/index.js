@@ -1,12 +1,10 @@
-
-
 import React from 'react';
 import Preloader from '../common/Preloader';
 
 export default class Users extends React.Component{
   componentDidMount() {
     this.props.getDataList();
-    console.log(this.props.users);
+    console.log('props', this.props);
   }
   renderUsersList = (users) => {
     console.log(users);

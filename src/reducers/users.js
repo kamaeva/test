@@ -23,6 +23,9 @@ const dataFetchingState = handleActions({
   },
 }, 'none');
 
+/*
+ * тут просто неправильно стояли скобочки
+ */
 const users = handleActions({
   [actions.fetchDataSuccess](state, { payload: { users } }) {
     return {
