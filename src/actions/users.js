@@ -8,11 +8,7 @@ export const fetchDataFailure = createAction('DATA_FETCH_FAILURE');
 export const getDataList = (params) => async (dispatch) => {
   dispatch(fetchDataRequest());
   try {
-<<<<<<< HEAD
     const res = await axios.get('./users.json', params);
-=======
-    const res = await axios.get('./users.json');
->>>>>>> master
     dispatch(fetchDataSuccess(res.data));
   } catch (e) {
 	  dispatch(fetchDataFailure());

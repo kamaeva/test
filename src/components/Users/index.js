@@ -20,26 +20,6 @@ export default class Users extends React.Component{
   }
   componentDidMount() {
     this.props.getDataList();
-<<<<<<< HEAD
-=======
-    console.log('props', this.props);
-  }
-  renderUsersList = (users) => {
-    console.log(users);
-    if(users.length === 0){
-      return <tr><th style={{ textAlign: 'center' }} colSpan={'4'}>Nothing</th></tr>;
-    }
-    return(
-      users.map(({ id, name, surname, desc }) => 
-        <tr key= {id} className="table_row">
-          <th>{id}</th>
-          <th>{name}</th>
-          <th>{surname}</th>
-          <th>{desc}</th>
-        </tr>
-      )
-    )
->>>>>>> master
   }
 
   // renderUsersList = (users) => {
@@ -62,7 +42,6 @@ export default class Users extends React.Component{
   // }
 
   render(){
-<<<<<<< HEAD
     const { usersList, usersFetchState, usersLastPage } = this.props;
     const { usersPerPage, currentPage } = this.state;
     return(
@@ -96,22 +75,6 @@ export default class Users extends React.Component{
           />  
         }
       </React.Fragment>
-=======
-    const { usersList, usersFetchState} = this.props;
-    return(
-      <table className="table">
-        <tbody>
-          <tr className="table_title">
-            <th>ID</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Description</th>
-          </tr>
-          { usersFetchState === 'request' ? <tr><th cols="4"><Preloader/></th></tr> : this.renderUsersList(usersList) }
-        </tbody>
-
-      </table>
->>>>>>> master
     );
   }
 }
